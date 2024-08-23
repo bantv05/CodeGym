@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> </title>
+	<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+	  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> 
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<!-- Bây giờ bạn có thể sử dụng JSX trong bất kỳ thẻ <script> nào bằng cách thêm thuộc tính type="text/babel" vào thẻ đó-->
+		<style>
+			.click{
+				color: blue;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+<body>
+	<!-- 	
+		JSX ->Javascrip XML: XML thể hiện ở thẻ mở và đóng, ra đời để hổ trợ viết XML & html trong file javascript. tại sao phải dùng? ReactElement  
+		-Bable sử dụng để đổi cú pháp và thay đổi cú pháp es6 trở lên. phân tích cú pháp và chuyển đổi JSX 
+	vd1:
+	<h1 title='Hello' class=:'heading'>Hello guys</h1>
+			vd2:
+	<ul>
+		<li>Javascript</li>
+		<li>PHP</li>
+	</ul>
+			vd3:
+	<div class="post-item">
+		<h2 title="Học react tại F8">Học ReactJS</h2>
+		<p>Học ReactJS từ cơ bản đến nâng cao</p>
+	</div> -->
+	<div id="root"></div>
+	<div id="app"></div>
+	<div id="mobile"></div>
+	<div id="Component"></div>
+<script type="text/babel">
+	// const reactCourse = 'ReactJS F8'
+
+	//const hh = <h1>{reactCourse}</h1>
+	//sử dụng {} để code JSX cùng code HTML
+	//ReactDOM.render(hh, document.getElementById('root'))
+
+	//cho sẵn mảng
+	const courses1 = [
+		{
+			name: 'HTML, CSS',
+		},
+		{
+			name: 'Responsive web design'
+		},
+		{
+			name: 'ReactJS'
+		}
+	];
+
+	const jsx = (
+		<ul> 
+			{courses1.map((course, index) =>
+				<li key={index}>{course.name}</li>
+				// React.createElement('li', null, course.name), map() render ra 1 dannh sách
+			)}
+		</ul>
+	//*<React.Fragment></React.Fragment> sử dụng để thay cho thẻ div, không hiển thị ra thẻ *
+		
+	);
+
+	ReactDOM.render(jsx, document.getElementById('root'));
+//*2. React element types: Các loại phần tử phản ứng 
+// /Cấu trúc code rõ ràng và tận dụng được tính tái sử dụng của component
+function Header(){
+	return (
+		<div className="header">New Header</div>
+	)
+}
+
+class Content extends React.Component{
+	render(){
+		return (
+			<div className="content">New Content</div>
+		)
+	}
+}
+
+const app = (
+	<div className="wrapper">
+		// bien function nhu cu phap the tag, duoc ho tro tu jsx 
+		<Header/> 
+		<Content/>
+		<div className="footer">Footer</div>	
+	</div>
+)
+ReactDOM.render(app, document.getElementById('app'))
+// Props là gì? Dùng props khi nào?
+//App.jsx
+// React Element
+	// -sử dụng props giống như với atribute của thẻ HTMl
+	// -2props class, for => className, htmlFor
+	// -tuân theo quy ước có sẳn
+// React component
+	// -sử dụng props giống như đối số Component (function)
+	// -TỰ DO đặt tên props:
+		// +Đặt theo cameCase
+		// +*có thể bao gồm dấu gạch ngang
+	// chú ý:
+		// Prop "key" là prop đặc biêt
+		// props cơ bản là đối sô của Component
+		// 	=> Props có thể là bất cứ kieu dữ liệu gì
+		// Sử dụng destructuring
+
+// function PostItem(props){//Reactcomponanet con cho phep tai su dung, truyền dưới dạng Javascrip {}
+// 	return(
+// 		<div className="post-item">
+// 			<label htmlFor="email">Email</label>
+// 			<input id="email" type="text"/><br/>
+// 			<img src={props.image} alt="HTML, CSS Pro"/>	
+// 			<h2 className="post-title">{props.title}</h2>
+// 			<p className="post-desc">{props.desc}</p>
+// 			<p className="post-published">{props.published}</p>
+// 		</div>
+// 	)
+// }
+//Reactcomponanet cha
+// function App(){
+// 	return(
+// 		<div id="wrapper">
+// 			<h3>Hello AE</h3>
+// 			<PostItem
+// 				image="https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+// 				title="HTML, CSS - dành cho người mới bắt đầu"
+// 				desc="Bạn có kiến thức về ngôn ngữ JS"
+// 				published = "Một ngày trước . 5 phút đọc"
+// 			/>
+// 			<PostItem
+// 				image="https://files.fullstack.edu.vn/f8-prod/courses/27/64e184ee5d7a2.png"
+// 				title="HTML, CSS - dành cho người mới bắt đầu"
+// 				desc="Bạn có kiến thức về ngôn ngữ JS"
+// 				published = "Một ngày trước . 5 phút đọc"
+// 			/>
+// 		</div>
+// 	)
+// }
+// //index.js
+// ReactDOM.render(<App/>, document.getElementById('mobile'))
+const courses = [
+	{
+      "id": 15,
+      "title": "HTML CSS Pro",
+      "slug": "htmlcss",
+      "description": "Từ cơ bản tới chuyên sâu, thực hành 8 dự án, hàng trăm bài tập, trang hỏi đáp riêng, cấp chứng chỉ sau khóa học và mua một lần học mãi mãi.",
+      "image": "courses/15/62f13d2424a47.png",
+      "icon": "courses/15/62385d6c63dfa.png",
+      "video_type": "upload",
+      "video": null,
+      "old_price": 2500000,
+      "price": 1299000,
+      "pre_order_price": 699000,
+      "students_count": 3837,
+      "is_pro": true,
+      "is_coming_soon": false,
+      "is_selling": true,
+      "published_at": "2022-08-18T17:00:00.000000Z",
+      "is_registered": false,
+      "user_progress": 0,
+      "last_completed_at": null,
+      "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png",
+      "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/15/62385d6c63dfa.png",
+      "video_url": "",
+      "landing_page_url": "/landing/htmlcss",
+      "is_pre_order": false,
+      "is_published": true
+    },
+    {
+      "id": 27,
+      "title": "Ngôn ngữ tiền xử lý Sass",
+      "slug": "sass",
+      "description": "Đây là một khóa học nhỏ được tách ra từ 2 chương học trong khóa HTML CSS Pro. Kiến thức về Sass trong khóa này bạn có thể áp dụng ngay vào các dự án của bạn.",
+      "image": "courses/27/64e184ee5d7a2.png",
+      "icon": "courses/27/64e0daf212fad.png",
+      "video_type": "upload",
+      "video": "courses/27/oeT5zTmdk8KlHwU2meMJpnR7uihkX6OvYxnkjiB9.mp4",
+      "old_price": 400000,
+      "price": 299000,
+      "pre_order_price": 0,
+      "students_count": 0,
+      "is_pro": true,
+      "is_coming_soon": false,
+      "is_selling": true,
+      "published_at": "2023-08-19T15:06:00.000000Z",
+      "is_registered": false,
+      "user_progress": 0,
+      "last_completed_at": null,
+      "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/27/64e184ee5d7a2.png",
+      "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/27/64e0daf212fad.png",
+      "video_url": "https://videos.fullstack.edu.vn/f8-prod/courses/27/oeT5zTmdk8KlHwU2meMJpnR7uihkX6OvYxnkjiB9.mp4",
+      "landing_page_url": "/landing/sass",
+      "is_pre_order": false,
+      "is_published": true
+    },
+    {
+      "id": 19,
+      "title": "JavaScript Pro",
+      "slug": "javascript",
+      "description": "Khóa học JavaScript Pro",
+      "image": "courses/19/62f13cb607b4b.png",
+      "icon": "courses/19/62f13cb685c81.png",
+      "video_type": "upload",
+      "video": null,
+      "old_price": 0,
+      "price": 0,
+      "pre_order_price": 0,
+      "students_count": 0,
+      "is_pro": true,
+      "is_coming_soon": true,
+      "is_selling": false,
+      "published_at": "2024-02-29T17:00:00.000000Z",
+      "is_registered": false,
+      "user_progress": 0,
+      "last_completed_at": null,
+      "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/19/62f13cb607b4b.png",
+      "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/19/62f13cb685c81.png",
+      "video_url": "",
+      "landing_page_url": "/landing/javascript",
+      "is_pre_order": false,
+      "is_published": true
+    },
+    {
+      "id": 20,
+      "title": "NextJS Pro",
+      "slug": "reactjs-pro",
+      "description": "Khóa học NextJS Pro",
+      "image": "courses/20/648020fc16597.png",
+      "icon": "courses/20/648020fcc8000.png",
+      "video_type": "upload",
+      "video": null,
+      "old_price": 0,
+      "price": 0,
+      "pre_order_price": 0,
+      "students_count": 0,
+      "is_pro": true,
+      "is_coming_soon": true,
+      "is_selling": false,
+      "published_at": "2024-05-31T17:00:00.000000Z",
+      "is_registered": false,
+      "user_progress": 0,
+      "last_completed_at": null,
+      "image_url": "https://files.fullstack.edu.vn/f8-prod/courses/20/648020fc16597.png",
+      "icon_url": "https://files.fullstack.edu.vn/f8-prod/courses/20/648020fcc8000.png",
+      "video_url": "",
+      "landing_page_url": "/landing/reactjs-pro",
+      "is_pre_order": false,
+      "is_published": false
+    }
+]
+//truy cập vào tất cả các thuộc tính của đối tượng course thông qua item (tên cảu props)
+// const CourseItem = ({item, onClick}) =>(
+// 		<div>
+// 			<img src={item.image_url} alt="HTML, CSS Pro"/>	
+// 			<h2
+// 				onClick={() => onClick(item)}
+// 			className="course-title">{item.title}</h2>
+// 			<p className="course-desc">{item.description}</p>
+// 			<p className="course-published">{item.students_count}</p>
+// 		</div>
+// 	)
+
+// function App(){
+// 	const handleClick = (item) =>{
+// 		console.log(item.title)
+// 	}
+// 	return(
+// 		<div id="wreapper">
+// 			{courses.map(course => (
+// 				<CourseItem
+// 					key={course.id}
+// 					//cách 2: lấy trưc tiếp từ API và truyền {course} lên component cha
+// 					item = {course}
+// 					onClick={handleClick}
+// 					//cách 1:
+// 					// title={course.title}
+// 					// image={course.image_url}//đây là API của một đối tác, mình tự chuẩn hóa lại
+// 					// description={course.description}
+// 					// studentCount={course.students_count}
+					
+				
+// 				/>
+// 			))}
+// 		</div>
+// 	)
+// }
+
+// ReactDOM.render(<App/>, document.getElementById('mobile'))
+
+function Button({title, href, onClick}){
+	let Component = 'button';
+	const props = {};
+	if(onClick){
+		props.onClick = onClick
+	}
+	if(href){
+		Component = 'a'
+		props.href = href
+	}
+	return(
+		<Component {...props}>{title}</Component>
+	)
+}
+
+function App(){
+	return(
+		<div id="wrapper">
+			<Button
+				title="Click me!"
+				href="https://fullstack.edu.vn/"
+				className='click'
+				onClick={() => console.log(Math.random())}
+			/>	
+		</div>	
+);
+}
+
+ReactDOM.render(<App/>, document.getElementById('Component'))
+</script>
+</body>
+</html>
+
+<!-- DOM events? -->

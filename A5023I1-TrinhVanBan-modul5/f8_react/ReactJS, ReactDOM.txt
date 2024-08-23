@@ -1,0 +1,36 @@
+	React, React DOM
+1. document.createElement() để làm gì?
+const h1 = document.createElement('h1');
+h1.innerText = 'Hello guys';
+document.body.appendChild(h1);//hiển thị ra màn hình (render) là Hello guys
+vd:
+<div id = 'root'></div>
+const root = document.getlementById('root');
+const h1 = document.createElement('h1');
+
+h1.innerText = 'Hello guys';
+h1.id = 'heading';
+h1.className = 'test'
+Object.assign(h1.style, {
+	color:'blue',
+	backgroundColor: #333
+}) 
+document.body.appendChild(h1);
+
+2.React.createElement();
+biến tên_biến = React.createElement(tên_thẻ, ts2(gom thành 1 object), con_thẻ)
+2.1: tạo
+<h1 title='Hello' clas=:'heading'>Hello guys</h1>
+
+const h1React = React.createElement('h1', {
+	title:'Hello',
+	className:'heading'
+}, 'hello guys')
+
+2.2: tạo
+<ul>
+	<li>Javascript<li>
+	<li>ReactJS<li>
+</ul>
+
+const ulReact = React.createElement(ul);

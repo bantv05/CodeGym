@@ -1,0 +1,132 @@
+1.Arrow function
++ham thong thuong
+function ten(tham so){
+	console.log(log);
+}
++express function (là có toán tử gán)
+const logger = function(log){
+	console.log(log);
+}
++Arrow function:
+c1:	biến tên_biến = (tham_số) function{ 
+		console.log(tham_so);
+	}
+	const logger = (log) =>{
+		console.log(log);
+	}
+giúp viết ngắn gọn hơn
+c2: 	biến tên_biến = (tham_số1, tham_số2) => ({tham_số1: tham_số1, tham_số2: tham_số2})
+
+vd2:
+const logger = (ts1) =>console.log(log)
+thay vì 1 tham số chúng ta có thể bỏ dấu ngoặc
+const logger = ts1 =>console.log(log)
+
+2.Destructuring, Rest
+Destructuring là phân giả
+Rest là lấy ra những cái phần còn lại trong mảng
+$BIẾN THÔNG THƯỜNG
+vd: cách thông thường
+var array = ['JS', 'PHP', 'RUBY'];
+var a = array[1];
+var b = array[2];
+var c = array[3];
+console.log(a, b, c);
+- sử dụng Destructuring
+var [ts1, ts2, ts3] = ten_mảng;
+vd: lấy a, c
+var array = ['JS', 'PHP', 'RUBY'];
+var [a, , c] = array;
+console.log(a, c);//JS, RUBY
+- sử dụng Rest
+var array = ['JS', 'PHP', 'RUBY'];
+var [a, ...rest] = array;
+console.log(a);//JS
+console.log(rest);//'PHP', 'RUBY'
+$OBJECT
+*lưu ý: array dùng cặp dấu ngoặc vuông [] và object dùng ngoặc {}
+VD: Destructuring, Rest
+var course = {
+	name: 'js',
+	price: 1000
+};
+var {name, price} = course;// nơi muốn lấy dữ liệu
+console.log(name, price);
+console.log(name, price, old);//name: 'js',price: 1000, undefind
+//nếu chúng ta không muốn nhận gtri old: undefind thì:
+var course = {
+	name: 'js',
+	price: 1000
+};
+var {name, price, old = 20} = course;// nơi muốn lấy dữ liệu
+console.log(name, price);//'js', 1000,
+console.log(name, price, old);//'js', 1000, 20
+var course = {
+	name: 'js',
+	price: 1000,
+	image: 'img-addre'
+};
+var {name, ...rest} = course;// nơi muốn lấy dữ liệu
+console.log(name);//js
+console.log(rest);//1000,'img-addre'
+
+$OBJECT CON
+var course = {
+	name: 'js',
+	price: 1000,
+	image: 'img-addre'
+	children:{
+		name:'ReactJS'
+	}
+};
+//var {name, children:{name}} = course;// nơi muốn lấy dữ liệu
+//console.log(name);//ReactJS (name trùng tên với thằng cha)
+* để đổi tên: tên_hiện tại: tên_mới
+var {name: parentName, children:{name: childrenName}} = course;// nơi muốn lấy dữ liệu
+console.log(parentName);
+consolog.log(childrenName);//ReactJS (name trùng tên với thằng cha)
+3.Rest Params
+vì sao console lại có thể nhận nhiều giá trịnhư vậy?
+function logger(...params){
+	//array
+	console.log(params); sẽ nhận ra array}
+console.log(logger(1,2,3,4,5,6,7,8,9));
+
+BaiTap:
+const { 
+    a = 'default', 
+    b, 
+    ...rest 
+} = {
+    b: 'val1',
+    c: 'val2',
+    d: 'val3'
+};
+
+console.log(a, b, rest); // Output: default, val1,{c:'val2, d:'vale'}
+
+4. Toán tử giải(Spread)
+var array1 = ['JS', 'PHP', 'Ruby'];
+var array2 = ['CSS'];
+var array3 = [...array1, ...array2];//ghép chuổi
+console.log(array3);'JS', 'PHP', 'Ruby','CSS'
+	$OBJECT
+var object1 = {
+	name: 'Javascript'
+}
+var object2 = {
+	price: 1000
+}
+var object3 = {
+	...object1,
+	...object2
+}
+console.log(object3);//name: 'Javascript', price: 1000
+vd: 
+var array = ['Javascript', 'PHP', 'Ruby', 'CSS'];
+function logger(...rest){
+	for(int i = 0; i < rest.lenth; i++){
+		console.log(rest[i]);
+}
+logger(...array);// truyền đối số
+}

@@ -1,0 +1,28 @@
+I.HOOK
+1. chỉ dùng cho function Hook
+2. Component đơn giản và trở nên dễ hiểu
+	- Không bị chia logic ra như method class cComponent
+	- Không cần sd "this"
+3. Sử dụng Hook khi nòa?
+	-Dự án 
+		+ Component mới => sd Hooks
+		+ Component cũ => Giữ nguyên, có thời gian tối ưu sau
+	
+	-login nghiệp vụ cần sử dụng tính chất của OOP => Class component
+4> Sử dụng kết hợp cả function component và class component
+ *lưuys: hooks chỉ sử dụng với function component thôi.
+- tất cả các hook đều là hàm
+
+II. USE STATE hook
+	-Khi nào thì sử dụng: khi muốn dữ liệu thay đổi thì giao diện tự động được cập nhật(render())
+
+Cách dùng: import {useState} from 'react'
+	const [state, setState] = useState(initState);
+với:	initState: giá trị khởi tạo sử dụng lần đầu
+	state: lần đầu nó lấy gtri khởi tạo = initState
+	setState: hàm, hàm xét lại giá trị state
+
+ví dụ sd useState: khi nhấn vào một button thì sẽ thay đổi giao diện
+
+
+III. Two-way binding trong React?

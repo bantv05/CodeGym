@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ReactJS</title>
+	  <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+	  <script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+</head>
+<body>
+	<div id = 'root'></div>
+	<div id='content'></div>
+	<div id='body'></div>
+	<script type="text/javascript">
+	// 2.1 tạo document.createElement()
+// <h1 title='Hello' clas=:'heading'>Hello guys</h1>
+
+// const root = document.getElementById('root');
+// const h1 = document.createElement('h1');
+
+// 	h1.innerText = 'Hello guys';
+// 	h1.id = 'heading';
+// 	h1.className = 'test'
+// Object.assign(h1.style, {
+// 	color:'green',
+// 	backgroundColor: 'red'
+// }) 
+// document.body.appendChild(h1);
+
+	// 2.2 tạo React.createElement();
+
+		// 	2.2.1: tạo
+	// <h1 title='Hello' clas=:'heading'>Hello guys</h1>
+
+	// const h1React = React.createElement('h1', {
+	// 	title:'Hello',
+	// 	className:'heading'
+	// 	//appenChild: 'hello guys': là con
+	// }, 'hello guys')
+
+	// console.log(h1React);
+	// 	// 	2.2.2: tạo
+	// 	// <ul>
+	// 	// 	<li>Javascript</li>
+	// 	// 	<li>PHP</li>
+	// 	// </ul>
+	// 	//DOM
+	// 	const ulDOM = document.createElement('ul')
+	// 	ulDOM.id = 'ul-id'
+	// 	ulDOM.style = 'color: red'
+
+	// 	const liDOM1 = document.createElement('ul')
+	// 	liDOM1.innerText = 'Javascript'
+	// 	const liDOM2 = document.createElement('ul')
+	// 	liDOM2.innerText = 'ReactJS'
+
+	// 	// đưa 2 thẻ li vào ul
+	// 	ulDOM.appendChild(liDOM1)
+	// 	ulDOM.appendChild(liDOM2)
+
+	// 	// reder
+	// 	document.body.appendChild(ulDOM)
+
+	// 	//react
+	// 	const ulReact = React.createElement('ul',
+	// 	{
+	// 		id: 'ul-id',
+	// 		style: 'color: red'
+	// 	},
+	// 		React.createElement('li', null, 'Java'),
+	// 		React.createElement('li', null, 'React')
+	// 	)
+	// 	console.log(ulReact)
+	// 	// 2.2.3 Tạo
+	// // <div class="post-item">
+	// // 	<h2 title="Học react tại F8">Học ReactJS</h2>
+	// // 	<p>Học ReactJS từ cơ bản đến nâng cao</p>
+	// // </div>
+	// //DOM
+	// const divDOM = document.createElement('div');//tao ra the div
+	// divDOM.className = "post-item"
+
+	// const h2DOM = document.createElement('h2');//tao ra the h2 va them property
+	// h2DOM.title = "Học react tại F8"
+	// h2DOM.innerText = "Học ReactJS"
+
+	// const pDOM = document.createElement('p');//tao ra the p
+	// pDOM.innerText = "Học ReactJS từ cơ bản đến nâng cao"
+
+	// //dua 2 the con vao div
+	// divDOM.appendChild(h2DOM);
+	// divDOM.appendChild(pDOM);
+
+	// //reder: hien_thi_ra
+	// document.body.appendChild(divDOM);
+
+	// 3. ReactDOM la gi? tai sao phai sd?
+	// 2.2.3 Tạo
+	// <div class="post-item">
+	// 	<h2 title="Học react tại F8">Học ReactJS</h2>
+	// 	<p>Học ReactJS từ cơ bản đến nâng cao</p>
+	// </div>
+	//ReactJS
+	const postItem = React.createElement(
+		'div',
+		{
+			className:'post-item'
+		},
+		React.createElement(
+				'h2',
+				{
+					title: 'Học react tại F8'
+				},
+				'Học ReactJS'
+			),
+		React.createElement('p',{},'Học ReactJS từ cơ bản đến nâng cao')
+		)
+
+	//get root element
+	const content = document.getElementById('content');
+
+	//reactDOM -> render UI
+	// ReactDOM.render(ten_tao_the_cha, the_da_dinh_nghia),
+	ReactDOM.render(postItem, content);
+
+		// 	3.2.1: Tổ chức code bằng ReactDOM
+	// <h1 title='Hello' clas=:'heading'>Hello guys</h1>
+		// 	// 	3.2.2: tạo
+	// 	// <ul>
+	// 	// 	<li>Javascript</li>
+	// 	// 	<li>PHP</li>
+	// 	// </ul>
+
+	const h1PostItem = React.createElement(
+			'h1',
+			{
+				title:'hello',
+				className: 'heading'
+			},
+			'Hello guys'
+		)
+	const root = document.getElementById('root');
+	ReactDOM.render(h1PostItem, root);
+// 	3.2.2: tạo
+	const ulPostIteam = React.createElement(
+			'ul',{},
+			React.createElement(
+				'li', {}, 'Javascript'
+			),
+			React.createElement(
+				'li', {}, 'ReactJS'
+			)
+		)
+
+	const body = document.getElementById('body');
+	ReactDOM.render(ulPostIteam, body);
+	</script>
+
+</body>
+</html>

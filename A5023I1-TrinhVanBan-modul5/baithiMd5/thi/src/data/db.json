@@ -1,0 +1,117 @@
+{
+  "musics": [
+    {
+      "id": 1,
+      "ten": "Noi nay co anh 11",
+      "caSi": "Son Tung MTP",
+      "nhacSi": "Huy tuan",
+      "thoiGian": "05:00",
+      "soYeuThich": "34",
+      "states": {
+        "id": 1,
+        "tt": "Cong khai"
+      }
+    },
+    {
+      "id": 2,
+      "ten": "Kho ve nu cuoi",
+      "caSi": "Dat G",
+      "nhacSi": "Huy tuan",
+      "thoiGian": "04:30",
+      "soYeuThich": "34",
+      "states": {
+        "id": 2,
+        "tt": "Luu tru"
+      }
+    },
+    {
+      "id": 3,
+      "ten": "Kho ve nu cuoi",
+      "caSi": "Dat G",
+      "nhacSi": "Huy tuan",
+      "thoiGian": "04:30",
+      "soYeuThich": "34",
+      "states": {
+        "id": 2,
+        "tt": "Luu tru"
+      }
+    },
+    {
+      "id": 4,
+      "ten": "See you again",
+      "caSi": "Dat G",
+      "nhacSi": "Huy tuan",
+      "thoiGian": "04:30",
+      "soYeuThich": "34",
+      "states": {
+        "id": 2,
+        "tt": "Luu tru"
+      }
+    },
+    {
+      "ten": "aa",
+      "caSi": "aaa",
+      "nhacSi": "aaa",
+      "thoiGian": "15:35",
+      "soYeuThich": 0,
+      "states": {
+        "tt": "Luu tru"
+      },
+      "id": 8
+    },
+    {
+      "ten": "Ban dep trai",
+      "caSi": "ban ok",
+      "nhacSi": "ok la",
+      "thoiGian": "14:37",
+      "soYeuThich": 0,
+      "states": {
+        "tt": "Luu tru"
+      },
+      "id": 9
+    },
+    {
+      "ten": "123",
+      "caSi": "123",
+      "nhacSi": "123",
+      "thoiGian": "13:37",
+      "soYeuThich": 0,
+      "states": {
+        "tt": "Luu tru"
+      },
+      "id": 10
+    },
+    {
+      "ten": "dd",
+      "caSi": "dd",
+      "nhacSi": "ddd",
+      "thoiGian": "15:36",
+      "soYeuThich": 0,
+      "states": {
+        "tt": "Luu tru"
+      },
+      "id": 11
+    },
+    {
+      "ten": "em la cua anh",
+      "caSi": "Huy Tuan",
+      "nhacSi": "ok",
+      "thoiGian": "12:07",
+      "soYeuThich": 0,
+      "states": {
+        "tt": "Luu tru"
+      },
+      "id": 12
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "tt": "Cong khai"
+    },
+    {
+      "id": 2,
+      "tt": "Luu tru"
+    }
+  ]
+}

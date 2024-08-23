@@ -1,0 +1,21 @@
+useEffect hook
+ 1. useEffect(callback)
+	- gọi callback mỗi khi component re-render
+	- gọi callback sau khi component thêm element vào DOM(jsx chạy trước -> useEffect)
+	- lấy dữ liệu 
+	- việc khong có useEffect, logic thực hiện trước, cá logic phức tạo thì xử lí giao diện người dùng bị chậm trễ (ưu tiên gd người dùng)
+ 2. useEffect(callback, [])
+	- chỉ gọi callback 1 lần khi component mounted(hiện)
+ 3. useEffect(callback, [deps])
+	-bài toán
+	- callback sẽ được gọi lại mỗi khi deps thay đổi
+	- truyền biến ban đầu của state vào dependencys để sau khi render nó sẽ kiểm tra việc so sánh biến ban đầu có thay đổi hay không, nếu thay đổi nó sẽ callback lại 
+
+thực hành:
+1. Update DOM
+2. Call API
+	- API là application programing interface
+	- viết API không có function useEffect, sẽ mounted ra 2 lần 1 lần render và stridMount của react cẩn bảo nên sẽ gọi 2 lần
+3. Listen DOM events
+	- Scroll: để lắng nghe sự kiện cuộn trang
+	- Resize: sẽ được kích hoạt khi thay đổi kích thước của trang web

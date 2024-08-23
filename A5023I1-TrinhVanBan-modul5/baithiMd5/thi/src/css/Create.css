@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.form{
+    width: 450px;
+    /*height: 450px;*/
+    padding: 20px;
+    box-shadow: 0 0 10px 5px grey;
+}
+input, select{
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+button{
+    background: #3ce73c;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 20px 0 0 45px;
+    border: none;
+}
+button:hover{
+    opacity: 0.7;
+}
+button::placeholder{
+    font-size: 12px;
+}
+label{
+    font-weight: bold;
+}
+.backbtn{
+    background: #17aad9;
+}
+.err{
+    color: red;
+}

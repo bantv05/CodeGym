@@ -1,0 +1,30 @@
+.detail-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container h3 {
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.detail-container h3 span {
+    font-weight: normal;
+    color: #555;
+}
+.btn1 {
+    background-color: #17a2b8;
+    color: white;
+    padding: 7px 12px;
+}
+
+.btn2 {
+    background-color: #ffc107;
+    color: white;
+    padding: 7px 12px;
+}

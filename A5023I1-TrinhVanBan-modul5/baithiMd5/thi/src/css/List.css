@@ -1,0 +1,108 @@
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 50px;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin: 0;
+}
+
+.btnAdd {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+h1{
+    margin: 50px;
+}
+.btnAddn{
+    padding-bottom: 20px;
+    text-align: right;
+}
+.btnAdd:hover {
+    background-color: #218838;
+}
+
+.content {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #343a40;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.button {
+    display: flex;
+    gap: 10px;
+}
+
+.btn1, .btn2, .btn3 {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn2 {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn3 {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn1:hover {
+    background-color: #138496;
+}
+
+.btn2:hover {
+    background-color: #e0a800;
+}
+
+.btn3:hover {
+    background-color: #c82333;
+}
+.page-link{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    margin: 10px;
+}
+nav ul li{
+    margin: 10px;
+    list-style-type: none;
+}

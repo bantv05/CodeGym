@@ -1,0 +1,6 @@
+Promise trong Javascript 
+- Promise sinh ra để chúng ta xử lí bất đồng bộ, trước khi có Promise chúng ta thường sử dụng callback hell, bị saau vào khó nhìn, khó hiểu, như vậy thằng Promise sinh ra từ es6 phiên bản mới
+- để tạo ra Promise chúng ta tạo ra từ khóa new Promise, trong contructor truyền vào function với 2 tham số, khi thực thi resolve và reject, resolve khi thao tác xử lí nó thành công, reject khi thao tác xử lí nó thất bại
+- khi sd thằng promise từ đối tượng được tạo ra, chúng ta sẽ sử dụng .then và .catch() đều nhận callback function, .then nó sẽ lọt vào khi Promise được resolve, .catch nó sẽ lọt vào khi Promise được reject
+
+xử lí khi nào? ví dụ về function setTimeOut với 1000 thì sẽ xảy ra bất đồng bộ
